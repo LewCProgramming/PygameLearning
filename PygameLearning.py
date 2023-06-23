@@ -1,5 +1,9 @@
 import pygame
 from sys import exit
+import os
+
+sourceFileDir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(sourceFileDir)
 
 def display_score():
     current_time = pygame.time.get_ticks()
@@ -15,8 +19,8 @@ clock = pygame.time.Clock()
 test_font = pygame.font.Font(None, 50)
 game_active = True
 
-sky_surface = pygame.image.load('Desktop/Code Folder/PygameLearning/sky.png').convert()
-ground_surface = pygame.image.load('Desktop/Code Folder/PygameLearning/ground.png').convert()
+sky_surface = pygame.image.load('./sky.png').convert()
+ground_surface = pygame.image.load('./ground.png').convert()
 
 scaled_sky_surface = pygame.transform.scale(sky_surface,(800,300))
 scaled_ground_surface = pygame.transform.scale(ground_surface,(800,100))
@@ -24,10 +28,10 @@ scaled_ground_surface = pygame.transform.scale(ground_surface,(800,100))
 #score_surface = test_font.render('This is LewGame', False, (64,200,0))
 #score_rectangle = score_surface.get_rect(center = (400,50))
 
-snail_surface = pygame.image.load('Desktop/Code Folder/PygameLearning/Graphics/Enemies/snailWalk1.png').convert_alpha()
+snail_surface = pygame.image.load('./Graphics/Enemies/snailWalk1.png').convert_alpha()
 snail_rectangle = snail_surface.get_rect(bottomright = (600, 300))
 
-player_surface = pygame.image.load('Desktop/Code Folder/PygameLearning/Graphics/Player/p1_walk/PNG/p1_walk01.png').convert_alpha()
+player_surface = pygame.image.load('./Graphics/Player/p1_walk/PNG/p1_walk01.png').convert_alpha()
 player_rectangle = player_surface.get_rect(midbottom = (80,305))
 player_gravity = 0
 
